@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IFP — Meu Painel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-titulo">
+    <img src="LOGO-IFP.png" alt="Logo IFP" class="topbar-logo">
+    <h1>MEU PAINEL</h1>
+  </div>
+  <button class="sair" id="btn-sair">Sair</button>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h2 id="aluno-nome">Carregando...</h2>
+    <p id="aluno-unidade"></p>
+  </div>
+
+  <div class="kpi-grid-2x2">
+    <div class="kpi-card">
+      <div class="kpi-label">Cliques no seu link</div>
+      <div class="kpi-valor" id="kpi-cliques">—</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Indicações confirmadas</div>
+      <div class="kpi-valor" id="kpi-confirmadas">—</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Desconto na mensalidade</div>
+      <div class="kpi-valor" id="kpi-desconto">—</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Saldo acumulado</div>
+      <div class="kpi-valor" id="kpi-saldo">—</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Seu link de indicação</h2>
+    <p>Compartilhe esse link — cada pessoa que se matricular através dele conta como uma indicação sua.</p>
+    <div class="link-box">
+      <input type="text" id="link-afiliado" readonly>
+      <button class="btn btn-outline" id="btn-copiar">Copiar</button>
+    </div>
+    <div class="erro-msg" id="copiar-msg"></div>
+  </div>
+
+  <div class="card">
+    <h2>Suas indicações</h2>
+    <table class="tabela-indicacoes" id="tabela-indicacoes">
+      <thead>
+        <tr><th>Nome</th><th>Status</th><th>Data</th></tr>
+      </thead>
+      <tbody id="corpo-indicacoes">
+        <tr><td colspan="3">Carregando...</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="aluno-dashboard.js"></script>
+</body>
+</html>

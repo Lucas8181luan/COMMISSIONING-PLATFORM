@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IFP — Login Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-wrapper">
+  <div class="login-card">
+    <img src="LOGO-IFP.png" alt="Logo IFP" class="login-logo">
+    <h1>Painel Master</h1>
+    <p class="subtitle">Acesso restrito à equipe IFP</p>
+
+    <form id="form-login">
+      <label for="usuario">Usuário</label>
+      <input type="text" id="usuario" autocomplete="username" required>
+
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" autocomplete="current-password" required>
+
+      <button type="submit" class="btn btn-primary" id="btn-entrar">Entrar</button>
+      <div class="erro-msg" id="erro-msg"></div>
+    </form>
+    <a href="unidade.html" class="link-voltar">Trocar unidade</a>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="login-admin.js"></script>
+</body>
+</html>

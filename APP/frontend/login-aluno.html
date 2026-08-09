@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IFP — Área do Aluno</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-wrapper">
+  <div class="login-card">
+    <img src="LOGO-IFP.png" alt="Logo IFP" class="login-logo">
+    <h1>Área do Aluno</h1>
+    <p class="subtitle" id="unidade-atual">Unidade: —</p>
+
+    <div class="tabs">
+      <button class="tab-btn ativo" id="tab-login" type="button">Entrar</button>
+      <button class="tab-btn" id="tab-cadastro" type="button">Cadastrar</button>
+    </div>
+
+    <form id="form-login">
+      <label for="login-cpf">CPF</label>
+      <input type="text" id="login-cpf" required>
+
+      <label for="login-senha">Senha</label>
+      <input type="password" id="login-senha" required>
+
+      <button type="submit" class="btn btn-primary" id="btn-entrar">Entrar</button>
+    </form>
+
+    <form id="form-cadastro" style="display:none;">
+      <label for="cad-nome">Nome completo</label>
+      <input type="text" id="cad-nome" required>
+
+      <label for="cad-cpf">CPF</label>
+      <input type="text" id="cad-cpf" required>
+
+      <label for="cad-email">E-mail</label>
+      <input type="text" id="cad-email">
+
+      <label for="cad-senha">Senha</label>
+      <input type="password" id="cad-senha" required>
+
+      <button type="submit" class="btn btn-primary" id="btn-cadastrar">Criar conta</button>
+    </form>
+
+    <div class="erro-msg" id="erro-msg"></div>
+    <a href="unidade.html" class="link-voltar">Trocar unidade</a>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="login-aluno.js"></script>
+</body>
+</html>

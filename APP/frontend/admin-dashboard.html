@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IFP — Painel Master</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-titulo">
+    <img src="LOGO-IFP.png" alt="Logo IFP" class="topbar-logo">
+    <h1>PAINEL MASTER</h1>
+  </div>
+  <button class="sair" id="btn-sair">Sair</button>
+</div>
+
+<div class="container container-wide">
+
+  <div class="card">
+    <h2>Resumo por unidade</h2>
+    <table class="tabela-indicacoes" id="tabela-unidades">
+      <thead>
+        <tr><th>Unidade</th><th>Alunos</th><th>Indicações confirmadas</th><th>Pendentes</th></tr>
+      </thead>
+      <tbody id="corpo-unidades">
+        <tr><td colspan="4">Carregando...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Indicações pendentes</h2>
+    <p>Confirme manualmente após verificar o pagamento/recibo do indicado.</p>
+    <table class="tabela-indicacoes" id="tabela-pendentes">
+      <thead>
+        <tr><th>Aluno indicador</th><th>Unidade</th><th>Indicado</th><th>Data</th><th>Ação</th></tr>
+      </thead>
+      <tbody id="corpo-pendentes">
+        <tr><td colspan="5">Carregando...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Alunos</h2>
+    <label for="filtro-unidade">Filtrar por unidade</label>
+    <select id="filtro-unidade">
+      <option value="">Todas as unidades</option>
+    </select>
+    <table class="tabela-indicacoes" id="tabela-alunos">
+      <thead>
+        <tr><th>Nome</th><th>CPF</th><th>Unidade</th><th>Cliques</th><th>Confirmadas</th><th>Saldo</th></tr>
+      </thead>
+      <tbody id="corpo-alunos">
+        <tr><td colspan="6">Carregando...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<script src="config.js"></script>
+<script src="admin-dashboard.js"></script>
+</body>
+</html>
