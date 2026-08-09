@@ -15,7 +15,7 @@ async function carregarPerfil() {
   try {
     const resp = await fetch(`${API_URL}/api/aluno/perfil`, { credentials: "include" });
     if (!resp.ok) {
-      window.location.href = "unidade.html";
+      window.location.href = "index.html";
       return;
     }
     const data = await resp.json();
@@ -42,7 +42,7 @@ async function carregarPerfil() {
       `).join("");
     }
   } catch (err) {
-    window.location.href = "unidade.html";
+    window.location.href = "index.html";
   }
 }
 
@@ -66,7 +66,7 @@ btnSair.addEventListener("click", async () => {
     await fetch(`${API_URL}/api/logout`, { method: "POST", credentials: "include" });
   } catch (err) {}
   sessionStorage.clear();
-  window.location.href = "unidade.html";
+  window.location.href = "index.html";
 });
 
 carregarPerfil();
