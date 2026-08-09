@@ -11,23 +11,20 @@
 <div class="login-wrapper">
   <div class="login-card">
     <img src="LOGO-IFP.png" alt="Logo IFP" class="login-logo">
-    <h1>LOGIN</h1>
-    <p class="subtitle">Entre com suas credenciais para acessar o painel</p>
+    <h1>Escolha sua unidade</h1>
+    <p class="subtitle">Selecione a unidade para continuar</p>
 
-    <form id="form-login">
-      <label for="usuario">Usuário</label>
-      <input type="text" id="usuario" autocomplete="username" required>
+    <label for="select-unidade">Unidade</label>
+    <select id="select-unidade">
+      <option value="">Carregando unidades...</option>
+    </select>
 
-      <label for="senha">Senha</label>
-      <input type="password" id="senha" autocomplete="current-password" required>
-
-      <button type="submit" class="btn btn-primary" id="btn-entrar">Entrar</button>
-      <div class="erro-msg" id="erro-msg"></div>
-    </form>
+    <button class="btn btn-primary" id="btn-continuar" style="margin-top:20px;">Continuar</button>
+    <div class="erro-msg" id="erro-msg"></div>
   </div>
 </div>
 
 <script src="config.js"></script>
-<script src="login.js"></script>
+<script src="unidade.js"></script>
 </body>
 </html>
