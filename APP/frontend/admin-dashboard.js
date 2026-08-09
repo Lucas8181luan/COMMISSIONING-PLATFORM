@@ -108,7 +108,7 @@ btnSair.addEventListener("click", async () => {
     await fetch(`${API_URL}/api/logout`, { method: "POST", credentials: "include" });
   } catch (err) {}
   sessionStorage.clear();
-  window.location.href = "unidade.html";
+  window.location.href = "index.html";
 });
 
 (async function iniciar() {
