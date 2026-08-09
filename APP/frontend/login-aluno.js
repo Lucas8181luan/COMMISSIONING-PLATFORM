@@ -2,7 +2,7 @@ const unidadeId = sessionStorage.getItem("unidade_id");
 const unidadeNome = sessionStorage.getItem("unidade_nome");
 
 if (!unidadeId) {
-  window.location.href = "unidade.html";
+  window.location.href = "index.html";
 }
 
 document.getElementById("unidade-atual").textContent = `Unidade: ${unidadeNome || "—"}`;
