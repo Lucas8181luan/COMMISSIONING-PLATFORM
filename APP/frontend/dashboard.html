@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel — Relatórios</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-titulo">
+    <img src="LOGO-NIT-CIANO.png" alt="Logo" class="topbar-logo">
+    <h1 id="titulo-topbar">PAINEL DE RELATÓRIOS</h1>
+  </div>
+  <button class="sair" id="btn-sair">Sair</button>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h2>Escolha o polo</h2>
+    <p>Selecione o polo para carregar as ações de atualização e download.</p>
+
+    <label for="select-polo">Polo</label>
+    <select id="select-polo">
+      <option value="">Carregando polos...</option>
+    </select>
+  </div>
+
+  <div class="card" id="card-acoes" style="display:none;">
+    <h2 id="titulo-polo">Relatório</h2>
+    <p>Atualize os dados a partir da planilha e depois baixe o relatório em PDF ou Excel.</p>
+
+    <div class="acoes">
+      <button class="btn btn-outline" id="btn-atualizar">Atualizar dados</button>
+      <button class="btn btn-solid" id="btn-baixar" disabled>Baixar PDF</button>
+      <button class="btn btn-solid" id="btn-baixar-excel" disabled>Baixar Excel</button>
+      <button class="btn btn-outline" id="btn-baixar-enccejaonly" disabled style="display:none;">Baixar PDF ENCCEJA</button>
+      <button class="btn btn-whatsapp btn-icon" id="btn-whatsapp-relatorio" disabled title="Compartilhar no WhatsApp" aria-label="Compartilhar no WhatsApp">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.11c-.24.68-1.4 1.33-1.93 1.4-.5.07-1.11.1-1.79-.11-.41-.13-.94-.3-1.62-.59-2.85-1.23-4.71-4.11-4.85-4.3-.14-.19-1.16-1.54-1.16-2.94s.73-2.09.99-2.37c.26-.29.56-.36.75-.36h.54c.17 0 .4-.01.63.48.24.5.8 1.84.87 1.97.07.14.11.29.02.47-.09.19-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.61-.07.16-.19.68-.79.87-1.06.19-.28.37-.23.62-.14.26.09 1.6.75 1.87.89.28.14.46.21.53.32.07.12.07.68-.17 1.36z"/></svg>
+      </button>
+    </div>
+
+    <div class="status-box" id="status-box">Clique em "Atualizar dados" para começar.</div>
+    <div class="progress-bar-wrap" id="progress-atualizar">
+      <div class="progress-bar-fill"></div>
+    </div>
+  </div>
+
+  <div class="alerta-box" id="alerta-inatividade" style="display:none;"></div>
+
+  <div id="painel-visual" style="display:none;">
+    <div class="painel-loading" id="painel-loading">
+      <div class="progress-bar-wrap ativo" style="max-width: 320px;">
+        <div class="progress-bar-fill"></div>
+      </div>
+      <span>Carregando dados do painel...</span>
+    </div>
+
+    <div class="painel-header">
+      <h2>Painel de Resultados</h2>
+      <div class="painel-header-acoes">
+        <button class="btn btn-outline" id="btn-baixar-painel">Baixar Painel (PDF)</button>
+        <button class="btn btn-whatsapp btn-icon" id="btn-whatsapp-painel" title="Compartilhar no WhatsApp" aria-label="Compartilhar no WhatsApp">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.11c-.24.68-1.4 1.33-1.93 1.4-.5.07-1.11.1-1.79-.11-.41-.13-.94-.3-1.62-.59-2.85-1.23-4.71-4.11-4.85-4.3-.14-.19-1.16-1.54-1.16-2.94s.73-2.09.99-2.37c.26-.29.56-.36.75-.36h.54c.17 0 .4-.01.63.48.24.5.8 1.84.87 1.97.07.14.11.29.02.47-.09.19-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.61-.07.16-.19.68-.79.87-1.06.19-.28.37-.23.62-.14.26.09 1.6.75 1.87.89.28.14.46.21.53.32.07.12.07.68-.17 1.36z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="painel-capturavel">
+      <div class="kpi-grid-2x2" id="kpi-grid"></div>
+
+      <div class="charts-grid">
+        <div class="card chart-card chart-card-wide">
+          <h2>Inscrições por Data</h2>
+          <canvas id="chart-data"></canvas>
+        </div>
+        <div class="card chart-card">
+          <h2>Inscrições por Local <span class="dica-clique">(clique em "Outros" para detalhes)</span></h2>
+          <canvas id="chart-local"></canvas>
+        </div>
+        <div class="card chart-card">
+          <h2>Cursos Escolhidos <span class="dica-clique">(clique em "Outros" para detalhes)</span></h2>
+          <canvas id="chart-cursos"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-fechar" id="modal-fechar" aria-label="Fechar">×</button>
+    <h2 id="modal-titulo">Outros</h2>
+    <div class="modal-chart-wrap">
+      <canvas id="modal-chart"></canvas>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<script src="config.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>
